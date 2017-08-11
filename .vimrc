@@ -29,6 +29,12 @@ Plug 'fatih/vim-go'
 " NERD tree
 Plug 'scrooloose/nerdtree'
 
+" airline
+Plug 'bling/vim-airline'
+
+" intellisense for C#
+Plug 'omnisharp/omnisharp-vim'
+
 " Visual Code Dark - Vim color theme
 Plug 'tomasiser/vim-code-dark'
 
