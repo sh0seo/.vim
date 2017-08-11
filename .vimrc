@@ -2,6 +2,9 @@
 " Minimalist Setting
 " ===================================================================
 
+" minimalist download
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 " Brief help
 " :PlugList       - lists configured plugins
 " :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
