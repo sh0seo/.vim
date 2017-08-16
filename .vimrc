@@ -35,6 +35,9 @@ Plug 'bling/vim-airline'
 " intellisense for C#
 Plug 'omnisharp/omnisharp-vim'
 
+" interactive command execution vim
+Plug 'shougo/vimproc.vim'
+
 " Visual Code Dark - Vim color theme
 Plug 'tomasiser/vim-code-dark'
 
