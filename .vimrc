@@ -33,6 +33,9 @@ Plug 'fatih/vim-go'
 " NERD tree
 Plug 'scrooloose/nerdtree'
 
+" Tagbar
+Plug 'majutsushi/tagbar'
+
 " airline
 Plug 'bling/vim-airline'
 
@@ -75,6 +78,19 @@ syntax on
 "Plugin 'taglist-plus'
 "Plugin 'bling/vim-airline'      " Status Line
 "Plugin 'SuperTab'
+
+
+" =============================================================================
+" Golang
+" =============================================================================
+let g:go_disable_autoinstall = 0
+
+"Highlight
+let g:go_highlight_function = 0
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 0
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 
 " =============================================================================
@@ -267,8 +283,13 @@ let g:SrcExpl_isUpdateTags = 0		" tag file update = off
 
 
 " =============================================================================
+" Tagbar 환경설정
+" =============================================================================
+nmap <F9> :TagbarToggle<CR>
+
+" =============================================================================
 " NERD Tree 환경설정
 " =============================================================================
 let NERDTreeWinPos = "left"		" NERD Tree위치 = 왼쪽
-nmap <F9> :NERDTreeToggle<CR>	" F9 Key = NERD Tree Toggle
+nmap <F7> :NERDTreeToggle<CR>	" F9 Key = NERD Tree Toggle
 
