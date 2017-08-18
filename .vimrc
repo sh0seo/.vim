@@ -24,6 +24,10 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'Sirver/ultisnips' | Plug 'honza/vim-snippets'
 
 " Golang
+" 1. PlugInstall
+" 2. $GOPATH setting
+" 3. GoInstallBinaries execute
+" use in Vim. Command is 'GoRun', 'GoBuild', 'GoErrCheck', 'GoDoc', 'GoDef'
 Plug 'fatih/vim-go'
 
 " NERD tree
@@ -37,6 +41,9 @@ Plug 'omnisharp/omnisharp-vim'
 
 " interactive command execution vim
 Plug 'shougo/vimproc.vim'
+
+" html
+Plug 'mattn/emmet-vim'
 
 " Visual Code Dark - Vim color theme
 Plug 'tomasiser/vim-code-dark'
