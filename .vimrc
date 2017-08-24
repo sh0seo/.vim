@@ -30,6 +30,9 @@ Plug 'Sirver/ultisnips' | Plug 'honza/vim-snippets'
 " use in Vim. Command is 'GoRun', 'GoBuild', 'GoErrCheck', 'GoDoc', 'GoDef'
 Plug 'fatih/vim-go'
 
+" Golang Debug. but only NEOVIM
+"Plug 'jodosha/vim-godebug'
+
 " NERD tree
 Plug 'scrooloose/nerdtree'
 
@@ -40,7 +43,10 @@ Plug 'majutsushi/tagbar'
 Plug 'bling/vim-airline'
 
 " intellisense for C#
-Plug 'omnisharp/omnisharp-vim'
+" Plug 'omnisharp/omnisharp-vim'
+
+" autocomple
+Plug 'shougo/neocomplete.vim'
 
 " interactive command execution vim
 Plug 'shougo/vimproc.vim'
@@ -72,12 +78,9 @@ syntax on
 
 
 " =============================================================================
-" My Bundle
+" NEOComple
 " =============================================================================
-"Plugin 'SrcExpl'
-"Plugin 'taglist-plus'
-"Plugin 'bling/vim-airline'      " Status Line
-"Plugin 'SuperTab'
+let g:neocomplete#enable_at_startup = 1
 
 
 " =============================================================================
@@ -232,38 +235,10 @@ augroup vimrc_autocmds
 
 
 " =============================================================================
-" ctags database path 설정 
+" NERDTree 환경설정
 " =============================================================================
-" set tag=./tags;/
-" let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-
-
-" =============================================================================
-" cscope database path 설정 
-" =============================================================================
-"function! LoadCscope()
-"	let db = findfile("cscope.out", ".;")
-"	if (!empty(db))
-"		let path = strpart(db, 0, match(db, "/cscope.out$"))
-"		set nocscopeverbose " suppress 'duplicate connection' error
-"   		exe "cs add " . db . " " . path
-"		set cscopeverbose
-"    endif
-"endfunction
-"au BufEnter /* call LoadCscope()
-
-
-" =============================================================================
-" Tag List 환경설정 
-" =============================================================================
-filetype on							" vim filetype on
-nmap  <F7> :TlistToggle<CR>			" F7 key = Tag List Toggle
-
-let Tlist_Ctags_Cmd = "/usr/bin/ctags"	" ctags 프로그램 위치
-let Tlist_Inc_Winwidth     = 0		" window width change off
-let Tlist_Exit_OnlyWindow  = 0		" tag/file 선택 완료 시 taglist
-let Tlist_Auto_Open 	   = 0		" vim 시작 시 window open
-let Tlist_Use_Right_Window = 1		" vim 시작 시 window open
+let NERDTreeWinPos = "left"		" NERD Tree위치 = 왼쪽
+nmap <F7> :NERDTreeToggle<CR>	" F9 Key = NERD Tree Toggle
 
 
 " =============================================================================
@@ -283,13 +258,40 @@ let g:SrcExpl_isUpdateTags = 0		" tag file update = off
 
 
 " =============================================================================
-" Tagbar 환경설정
+" Tagbar 환경설정 
 " =============================================================================
 nmap <F9> :TagbarToggle<CR>
 
+let g:tagbar_type_go = {  
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
+
+
 " =============================================================================
-" NERD Tree 환경설정
+" Tagbar 환경설정
 " =============================================================================
-let NERDTreeWinPos = "left"		" NERD Tree위치 = 왼쪽
-nmap <F7> :NERDTreeToggle<CR>	" F9 Key = NERD Tree Toggle
 
