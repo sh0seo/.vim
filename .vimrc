@@ -216,7 +216,7 @@ sy enable
 
 " more subtle popup colors
 if has ('gui_running')
-	set guifont=Source\ Code\ Pro:h13
+	set guifont=Roboto\ Mono:h13
 	set linespace=2
 	highlight Pmenu guibg=#cccccc gui=bold    
 endif
