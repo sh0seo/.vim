@@ -159,10 +159,10 @@ set nuw=5
 
 " 탭 크기 설정
 " set ts=4
-set sw=4
-set softtabstop=4 
-set tabstop=4
-set shiftwidth=4
+set sw=2
+set softtabstop=2 
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " 탭 >> 공백 변환 사용안함
@@ -233,6 +233,11 @@ augroup vimrc_autocmds
 	autocmd FileType python set nowrap
 	augroup EN
 
+
+" =============================================================================
+" 
+" =============================================================================
+nmap <F5> :GoRun<CR>
 
 " =============================================================================
 " NERDTree 환경설정
