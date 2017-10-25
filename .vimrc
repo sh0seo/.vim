@@ -33,7 +33,7 @@ Plug 'fatih/vim-go'
 " Python
 Plug 'vim-scripts/indentpython.vim'
 
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
 " Golang Debug. but only NEOVIM
 "Plug 'jodosha/vim-godebug'
@@ -90,7 +90,7 @@ set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on    " required
 " http://www.vim.org/scripts/script.php?script_id=850
 " download and ~/.vim
-let g:pydiction_location=/Users/SeoSangho/.vim/pydiction.py
+let g:pydiction_location='/Users/SeoSangho/.vim/pydiction.py'
 let python_higlight_all=1
 syntax on
 set encoding=utf-8
@@ -267,20 +267,20 @@ augroup vimrc_autocmds
 " Virtualenv Support
 " =============================================================================
 "python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"  project_base_dir = os.environ['VIRTUAL_ENV']
+"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"  execfile(activate_this, dict(__file__=activate_this))
+"EOF
 
 " =============================================================================
 " Auto-complete 
 " =============================================================================
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR
+" let g:ycm_autoclose_preview_window_after_completion=1
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR
 
 " =============================================================================
 " 
