@@ -30,6 +30,11 @@ Plug 'Sirver/ultisnips' | Plug 'honza/vim-snippets'
 " use in Vim. Command is 'GoRun', 'GoBuild', 'GoErrCheck', 'GoDoc', 'GoDef'
 Plug 'fatih/vim-go'
 
+" Python
+Plug 'vim-scripts/indentpython.vim'
+
+Plug 'Valloric/YouCompleteMe'
+
 " Golang Debug. but only NEOVIM
 "Plug 'jodosha/vim-godebug'
 
@@ -57,6 +62,15 @@ Plug 'mattn/emmet-vim'
 " Visual Code Dark - Vim color theme
 Plug 'tomasiser/vim-code-dark'
 
+" Syntax Checking/Highlighting
+Plug 'scrooloose/syntastic'
+
+" PEP8
+Plug 'nvie/vim-flake8'
+
+" Super Searching
+Plug 'kien/ctrlp.vim'
+
 " All of your Plugins must be added before the following line
 call plug#end()            " required
 
@@ -74,7 +88,12 @@ filetype off
 filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on    " required
+" http://www.vim.org/scripts/script.php?script_id=850
+" download and ~/.vim
+let g:pydiction_location=/Users/SeoSangho/.vim/pydiction.py
+let python_higlight_all=1
 syntax on
+set encoding=utf-8
 
 
 " =============================================================================
@@ -108,7 +127,16 @@ let g:go_highlight_build_constraints = 1
 " =============================================================================
 " For Python
 " =============================================================================
+
 "Bundle 'klen/python-mode'
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
 
 
 " =============================================================================
@@ -233,6 +261,26 @@ augroup vimrc_autocmds
 	autocmd FileType python set nowrap
 	augroup EN
 
+
+
+" =============================================================================
+" Virtualenv Support
+" =============================================================================
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+" =============================================================================
+" Auto-complete 
+" =============================================================================
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR
 
 " =============================================================================
 " 
