@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-easy-align'
 
 " Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 "Multiple Plug commands can be written in a single line using | separators
 Plug 'Sirver/ultisnips' | Plug 'honza/vim-snippets'
@@ -28,12 +28,7 @@ Plug 'Sirver/ultisnips' | Plug 'honza/vim-snippets'
 " 2. $GOPATH setting
 " 3. GoInstallBinaries execute
 " use in Vim. Command is 'GoRun', 'GoBuild', 'GoErrCheck', 'GoDoc', 'GoDef'
-Plug 'fatih/vim-go'
-
-" Python
-Plug 'vim-scripts/indentpython.vim'
-
-" Plug 'Valloric/YouCompleteMe'
+" Plug 'fatih/vim-go'
 
 " Golang Debug. but only NEOVIM
 "Plug 'jodosha/vim-godebug'
@@ -57,19 +52,10 @@ Plug 'shougo/neocomplete.vim'
 Plug 'shougo/vimproc.vim'
 
 " html
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 
 " Visual Code Dark - Vim color theme
-Plug 'tomasiser/vim-code-dark'
-
-" Syntax Checking/Highlighting
-Plug 'scrooloose/syntastic'
-
-" PEP8
-Plug 'nvie/vim-flake8'
-
-" Super Searching
-Plug 'kien/ctrlp.vim'
+" Plug 'tomasiser/vim-code-dark'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -78,22 +64,21 @@ call plug#end()            " required
 " =============================================================================
 " Color Scheme Setting
 " =============================================================================
-colorscheme codedark 
+syntax on
+set background=dark
+colorscheme solarized
 let &t_Co=256
 
+" option name default optional ------------------------------------------------ 
+let g:solarized_termcolors=256
+
 
 " =============================================================================
 " =============================================================================
-filetype off
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
+"filetype off
+"filetype plugin indent off
+" set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on    " required
-" http://www.vim.org/scripts/script.php?script_id=850
-" download and ~/.vim
-let g:pydiction_location='/Users/SeoSangho/.vim/pydiction.py'
-let python_higlight_all=1
-syntax on
-set encoding=utf-8
 
 
 " =============================================================================
@@ -127,25 +112,8 @@ let g:go_highlight_build_constraints = 1
 " =============================================================================
 " For Python
 " =============================================================================
-
 "Bundle 'klen/python-mode'
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-
-
-" =============================================================================
-" Swift Plugin
-" =============================================================================
-" Plugin 'apple/swift'
-" Plugin 'kballard/vim-swift'
-" Plugin 'SWIFT-ATE-Syntax'
-" Plugin 'file:///Users/SeoSangho/swift', {'rtp': 'utils/vim', 'name': 'Swift-Syntax'}
+let g:pydiction_location='/Users/SEOSANGHO/.vim/complete-dict'
 
 
 " =============================================================================
@@ -153,7 +121,6 @@ au BufNewFile,BufRead *.py
 " =============================================================================
 scripte utf-8
 " vim:set fenc=utf-8 tw=0:
-" Vim setting for sirini
 
 " clipboard
 set clipboard=unnamed
@@ -187,10 +154,10 @@ set nuw=5
 
 " 탭 크기 설정
 " set ts=4
-set sw=2
-set softtabstop=2 
-set tabstop=2
-set shiftwidth=2
+set sw=4
+set softtabstop=4 
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
 " 탭 >> 공백 변환 사용안함
@@ -262,31 +229,6 @@ augroup vimrc_autocmds
 	augroup EN
 
 
-
-" =============================================================================
-" Virtualenv Support
-" =============================================================================
-"python with virtualenv support
-"py << EOF
-"import os
-"import sys
-"if 'VIRTUAL_ENV' in os.environ:
-"  project_base_dir = os.environ['VIRTUAL_ENV']
-"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-"  execfile(activate_this, dict(__file__=activate_this))
-"EOF
-
-" =============================================================================
-" Auto-complete 
-" =============================================================================
-" let g:ycm_autoclose_preview_window_after_completion=1
-" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR
-
-" =============================================================================
-" 
-" =============================================================================
-nmap <F5> :GoRun<CR>
-
 " =============================================================================
 " NERDTree 환경설정
 " =============================================================================
@@ -342,9 +284,4 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
-
-
-" =============================================================================
-" Tagbar 환경설정
-" =============================================================================
 
