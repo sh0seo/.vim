@@ -57,7 +57,7 @@ Plug 'shougo/neocomplete.vim'
 Plug 'shougo/vimproc.vim'
 
 " html
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 
 " Visual Code Dark - Vim color theme
 Plug 'tomasiser/vim-code-dark'
@@ -129,14 +129,6 @@ let g:go_highlight_build_constraints = 1
 " =============================================================================
 
 "Bundle 'klen/python-mode'
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
 
 
 " =============================================================================
