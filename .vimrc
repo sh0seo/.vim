@@ -23,13 +23,6 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 "Multiple Plug commands can be written in a single line using | separators
 Plug 'Sirver/ultisnips' | Plug 'honza/vim-snippets'
 
-" Golang
-" 1. PlugInstall
-" 2. $GOPATH setting
-" 3. GoInstallBinaries execute
-" use in Vim. Command is 'GoRun', 'GoBuild', 'GoErrCheck', 'GoDoc', 'GoDef'
-Plug 'fatih/vim-go'
-
 " Python
 Plug 'vim-scripts/indentpython.vim'
 
@@ -47,9 +40,6 @@ Plug 'majutsushi/tagbar'
 " airline
 Plug 'bling/vim-airline'
 
-" intellisense for C#
-" Plug 'omnisharp/omnisharp-vim'
-
 " autocomple
 Plug 'shougo/neocomplete.vim'
 
@@ -58,9 +48,6 @@ Plug 'shougo/vimproc.vim'
 
 " html
 " Plug 'mattn/emmet-vim'
-
-" Visual Code Dark - Vim color theme
-Plug 'tomasiser/vim-code-dark'
 
 " Syntax Checking/Highlighting
 Plug 'scrooloose/syntastic'
@@ -78,18 +65,14 @@ call plug#end()            " required
 " =============================================================================
 " Color Scheme Setting
 " =============================================================================
-colorscheme codedark 
-let &t_Co=256
+" colorscheme codedark 
+" let &t_Co=256
 
 
 " =============================================================================
 " =============================================================================
-filetype off
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on    " required
-" http://www.vim.org/scripts/script.php?script_id=850
-" download and ~/.vim
+" http://www.vim.org/scripts/script.php?script_id=850 download and ~/.vim
 let g:pydiction_location='/Users/SeoSangho/.vim/pydiction.py'
 let python_higlight_all=1
 syntax on
@@ -103,41 +86,9 @@ let g:neocomplete#enable_at_startup = 1
 
 
 " =============================================================================
-" Golang
-" =============================================================================
-let g:go_disable_autoinstall = 0
-
-"Highlight
-let g:go_highlight_function = 0
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 0
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-
-" =============================================================================
-" For NodeJS
-" =============================================================================
-"Plugin 'moll/vim-node'
-"Plugin 'Tabular'
-"Plugin 'jelera/vim-javascript-syntax'
-"Plugin 'pangloss/vim-javascript'
-
-
-" =============================================================================
 " For Python
 " =============================================================================
-
 "Bundle 'klen/python-mode'
-
-
-" =============================================================================
-" Swift Plugin
-" =============================================================================
-" Plugin 'apple/swift'
-" Plugin 'kballard/vim-swift'
-" Plugin 'SWIFT-ATE-Syntax'
-" Plugin 'file:///Users/SeoSangho/swift', {'rtp': 'utils/vim', 'name': 'Swift-Syntax'}
 
 
 " =============================================================================
@@ -162,7 +113,7 @@ set bs=indent,eol,start
 " 인코딩 설정
 "let &tenc=&enc
 "set enc=utf-8
-set fenc=utf-8
+"set fenc=utf-8
 "set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,big5,ucs-2le,latin1
 
 " 커서 위치 항상 보이기
@@ -179,10 +130,10 @@ set nuw=5
 
 " 탭 크기 설정
 " set ts=4
-set sw=2
-set softtabstop=2 
-set tabstop=2
-set shiftwidth=2
+set sw=4
+set softtabstop=4 
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
 " 탭 >> 공백 변환 사용안함
@@ -236,7 +187,7 @@ sy enable
 
 " more subtle popup colors
 if has ('gui_running')
-	set guifont=Roboto\ Mono:h13
+	set guifont=Roboto\ Mono Medium:h13
 	set linespace=2
 	highlight Pmenu guibg=#cccccc gui=bold    
 endif
@@ -274,10 +225,6 @@ augroup vimrc_autocmds
 " let g:ycm_autoclose_preview_window_after_completion=1
 " map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR
 
-" =============================================================================
-" 
-" =============================================================================
-nmap <F5> :GoRun<CR>
 
 " =============================================================================
 " NERDTree 환경설정
@@ -334,9 +281,4 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
-
-
-" =============================================================================
-" Tagbar 환경설정
-" =============================================================================
 
