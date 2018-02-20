@@ -58,6 +58,9 @@ Plug 'nvie/vim-flake8'
 " Super Searching
 Plug 'kien/ctrlp.vim'
 
+" color scheme
+Plug 'tomasr/molokai'
+
 " All of your Plugins must be added before the following line
 call plug#end()            " required
 
@@ -66,8 +69,9 @@ call plug#end()            " required
 " Color Scheme Setting
 " =============================================================================
 " colorscheme codedark 
-" let &t_Co=256
-
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 " =============================================================================
 " =============================================================================
