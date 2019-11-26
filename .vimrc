@@ -1,4 +1,4 @@
-" ===================================================================
+"" ===================================================================
 " Minimalist Setting
 " ===================================================================
 
@@ -24,9 +24,9 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'Sirver/ultisnips' | Plug 'honza/vim-snippets'
 
 " Python
-Plug 'vim-scripts/indentpython.vim'
+"Plug 'vim-scripts/indentpython.vim'
 
-" Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 
 " Golang Debug. but only NEOVIM
 "Plug 'jodosha/vim-godebug'
@@ -53,7 +53,7 @@ Plug 'shougo/vimproc.vim'
 Plug 'scrooloose/syntastic'
 
 " PEP8
-Plug 'nvie/vim-flake8'
+"Plug 'nvie/vim-flake8'
 
 " Super Searching
 Plug 'kien/ctrlp.vim'
@@ -75,11 +75,11 @@ let g:rehash256 = 1
 
 " =============================================================================
 " =============================================================================
-filetype plugin indent on    " required
+"filetype plugin indent on    " required
 " http://www.vim.org/scripts/script.php?script_id=850 download and ~/.vim
-let g:pydiction_location='/Users/SeoSangho/.vim/pydiction.py'
-let python_higlight_all=1
-syntax on
+"let g:pydiction_location='/Users/SeoSangho/.vim/pydiction.py'
+"let python_higlight_all=1
+"syntax on
 set encoding=utf-8
 
 
@@ -90,13 +90,7 @@ let g:neocomplete#enable_at_startup = 1
 
 
 " =============================================================================
-" For Python
-" =============================================================================
-"Bundle 'klen/python-mode'
-
-
-" =============================================================================
-" vim 환경설정
+" for vim
 " =============================================================================
 scripte utf-8
 " vim:set fenc=utf-8 tw=0:
