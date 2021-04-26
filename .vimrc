@@ -16,7 +16,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
-Plug 'fatih/vim-go'
+"Plug 'fatih/vim-go'
 
 Plug 'tomasiser/vim-code-dark'
 
