@@ -1,2 +1,2 @@
-# My Vim Setting
+# my .vimrc
 🖖 My vimrc file
