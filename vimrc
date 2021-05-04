@@ -17,6 +17,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'majutsushi/tagbar'
 
 "Plug 'fatih/vim-go'
 
@@ -29,7 +30,7 @@ colorscheme codedark
 "filetype plugin indent on
 
 if has("syntax")
-    syntax on
+  syntax on
 endif
 
 set hlsearch
