@@ -44,6 +44,10 @@ set shiftwidth=4 " autoindent width
 
 set laststatus=2 " status bar
 set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
+set backspace=indent,eol,start
+
+set enc=utf-8
+set fenc=utf-8
 
 "set sts=4
 "set showmatch
