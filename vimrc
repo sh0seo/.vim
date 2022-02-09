@@ -19,13 +19,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'
 
-"Plug 'fatih/vim-go'
-
-Plug 'tomasiser/vim-code-dark'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-colorscheme codedark
+colorscheme gruvbox
+set background=dark
 
 "filetype plugin indent on
 
