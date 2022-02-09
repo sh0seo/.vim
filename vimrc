@@ -34,7 +34,6 @@ endif
 
 set hlsearch
 set nu
-
 set autoindent
 set cindent
 
@@ -56,4 +55,9 @@ set fenc=utf-8
 "set ruler
 "set fileencodings=utf8,euc-kr
 
-nmap <F9> :NERDTreeToggle<CR>
+nmap <C-E> :NERDTreeToggle<CR>
+nmap <C-T> :Tagbar<CR>
+
+" autocmd
+autocmd BufNewFile *.py colo morning|set ts=2 sw=2
+autocmd BufNewFile *.txt colo evening
