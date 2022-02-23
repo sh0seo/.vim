@@ -18,13 +18,18 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
 
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
-colorscheme gruvbox
-set background=dark
+"colorscheme gruvbox
+"set background=dark
+set t_Co=256
+set t_ut=
+colorscheme codedark
 
 "filetype plugin indent on
 
@@ -61,3 +66,6 @@ nmap <C-T> :Tagbar<CR>
 " autocmd
 autocmd BufNewFile *.py colo morning|set ts=2 sw=2
 autocmd BufNewFile *.txt colo evening
+
+" vim-code-dark theme for airline
+let g:airline_theme = 'codedark'
